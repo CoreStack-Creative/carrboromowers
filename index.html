@@ -8,52 +8,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="overlay"></div>
+  <div class="page-content"> <!-- Add this wrapper -->
 
-  <header class="site-header">
-   <div class="hamburger" id="hamburger">
-     <div class="line line1"></div>
-     <div class="line line2"></div>
-     <div class="line line3"></div>
-   </div>
+    <div id="overlay"></div> <!-- Keep this inside wrapper -->
 
-   <div class="logo-center">
-     <a href="images/cmlogo.png" class="logo-link">
-       <img src="images/cmlogo.png" alt="Carrboro Mowing Logo" class="logo-img"/>
-     </a>
-     <h1 class="site-name">Carrboro Mowing</h1>
-   </div>
+    <section class="hero-section">
+      <header class="site-header">
+        <div class="hamburger" id="hamburger">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+        </div>
 
-   <nav class="side-menu" id="side-menu">
-     <ul>
-       <li class="active"><span class="hamburger-dot"></span><a href="index.html">Home</a></li>
-       <li><span class="hamburger-dot"></span><a href="contact.html">Contact</a></li>
-       <li><span class="hamburger-dot"></span><a href="about.html">About</a></li>
-     </ul>
-   </nav>
-  </header>
+        <div class="logo-center">
+          <a class="logo-link">
+            <img src="images/cmlogo.png" alt="Carrboro Mowing Logo" class="logo-img"/>
+          </a>
+          <h1 class="site-name">Carrboro Mowing</h1>
+        </div>
 
+        <nav class="side-menu" id="side-menu">
+          <ul>
+            <li class="active"><span class="hamburger-dot"></span><a href="index.html">Home</a></li>
+            <li><span class="hamburger-dot"></span><a href="contact.html">Contact</a></li>
+            <li><span class="hamburger-dot"></span><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </header>
 
-
-  <main class="main-space">
-    <!-- Placeholder for main content -->
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-content">
-      <a href="images/cmlogo.png" class="footer-logo-link">
-        <img src="images/cmlogo.png" alt="Carrboro Mowing Logo" class="footer-logo-img"/>
-      </a>
-      <p class="footer-name">Carrboro Mowing</p>
-      <p class="footer-contact">
-        Email: <a href="mailto:velo.guidrycsc@gmail.com">velo.guidrycsc@gmail.com</a>
-      </p>
-      <div class="footer-links">
-        <a class="footer-button" href="contact.html">Contact</a>
-        <a class="footer-button" href="about.html">About</a>
+      <div class="hero-text">
+        <h2 class="main-title">Local Mowing</h2>
+        <p class="subtitle">Chapel Hill / Carrboro, NC</p>
       </div>
-    </div>
-  </footer>
+    </section>
+
+    <main class="main-space">
+      <!-- Placeholder for main content -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <a class="footer-logo-link">
+          <img src="images/cmlogo.png" alt="Carrboro Mowing Logo" class="footer-logo-img"/>
+        </a>
+        <p class="footer-name">Carrboro Mowing</p>
+        <p class="footer-contact">
+          Email: <a href="mailto:velo.guidrycsc@gmail.com">velo.guidrycsc@gmail.com</a>
+        </p>
+        <div class="footer-links">
+          <a class="footer-button" href="contact.html">Contact</a>
+          <a class="footer-button" href="about.html">About</a>
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- End of page-content -->
 
   <script src="script.js"></script>
 </body>

@@ -1,11 +1,7 @@
-/* Reset and font */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Didot', serif;
-} 
-
+.page-content {
+  position: relative;
+  z-index: 1;
+}
 
 /* Overlay for blur effect */
 #overlay {
@@ -17,22 +13,63 @@
   backdrop-filter: blur(5px) brightness(0.8);
   background: rgba(0, 0, 0, 0.2);
   display: none;
-  z-index: 5;
+  z-index: 4; /* Correct value: behind header/menu */
 }
 
 /* Header */
 .site-header {
-  background-color: #003366;
+  background: transparent;
   color: white;
-  padding: 1rem 2rem;
-  position: relative;
+  padding: 2.5rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 5; /* In front of overlay */
 }
 
-.logo-center {
+/* Side menu */
+.side-menu {
+  z-index: 6; /* In front of header and overlay */
+}
+
+/* Hero text */
+.hero-text {
   text-align: center;
+  margin-top: auto;
+  margin-bottom: 10vh;
+  z-index: 5; /* Match site-header */
+}
+
+.site-header {
+  z-index: 5;
+}
+
+.side-menu {
+  z-index: 6;
+}
+
+.hero-text {
+  z-index: 5;
+}
+
+/* Reset and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Didot', serif;
+} 
+
+.logo-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .logo-img {
@@ -42,6 +79,7 @@
 
 .site-name {
   font-size: 2rem;
+  color: white;
 }
 
 /* Hamburger LEFT placement */
@@ -194,4 +232,44 @@
 
 .footer-button:hover {
   background-color: #005599;
+}
+
+.hero-section {
+  position: relative;
+  height: 75vh; /* was 100vh */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.1)),
+              url('images/bg.png') no-repeat center center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 1;
+}
+
+/* Hero text in center */
+.hero-text {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 10vh;
+  z-index: 3;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  opacity: 0.9;
 }
