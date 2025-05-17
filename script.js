@@ -8,7 +8,7 @@ function animateHamburger(open) {
   if (open) {
     hamburgerLines.forEach((line, index) => {
       line.style.position = 'relative'; // Ensure relative for top
-      line.style.top = `${104.6 + index * 32}px`; // Slide down spacing
+      line.style.top = `${145.3 + index * 32}px`; // Slide down spacing
     });
   } else {
     hamburgerLines.forEach(line => {
@@ -20,10 +20,12 @@ function animateHamburger(open) {
 function toggleMenu(open) {
   if (open) {
     hamburger.classList.add('active');
+    hamburger.classList.add('fixed'); // Freeze in place
     sideMenu.classList.add('active');
     overlay.style.display = 'block';
   } else {
     hamburger.classList.remove('active');
+    hamburger.classList.remove('fixed'); // Unfreeze
     sideMenu.classList.remove('active');
     overlay.style.display = 'none';
   }
