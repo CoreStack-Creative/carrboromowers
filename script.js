@@ -8,7 +8,7 @@ function animateHamburger(open) {
   if (open) {
     hamburgerLines.forEach((line, index) => {
       line.style.position = 'relative'; // Ensure relative for top
-      line.style.top = `${10 + index * 20}px`; // Slide down spacing
+      line.style.top = `${104.6 + index * 32}px`; // Slide down spacing
     });
   } else {
     hamburgerLines.forEach(line => {
