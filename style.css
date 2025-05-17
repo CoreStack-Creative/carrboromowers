@@ -1,0 +1,164 @@
+/* Reset and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Didot', serif;
+}
+
+/* Overlay for blur effect */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(5px) brightness(0.8);
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 5;
+}
+
+/* Header */
+.site-header {
+  background-color: #003366;
+  color: white;
+  padding: 1rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-center {
+  text-align: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: 40px;
+}
+
+.site-name {
+  font-size: 2rem;
+}
+
+/* Hamburger */
+.hamburger {
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s ease;
+  opacity: 1;
+}
+
+.hamburger.active .line {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #003366;
+  padding: 3rem 1rem;
+  transition: right 0.3s ease;
+  z-index: 6;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+}
+
+.side-menu li {
+  margin: 1.2rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu li span {
+  margin-right: 0.5rem;
+  color: #ccc;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.side-menu.active li span {
+  opacity: 1;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.side-menu li.active a {
+  font-weight: bold;
+  color: #00ffff;
+}
+
+/* Main content space */
+.main-space {
+  height: 70vh;
+  background-color: #f8f8f8;
+}
+
+/* Footer */
+.site-footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer-logo-img {
+  height: 30px;
+  width: 30px;
+}
+
+.footer-name {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.footer-contact {
+  margin: 0.5rem 0;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-button {
+  display: inline-block;
+  background-color: #003366;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.footer-button:hover {
+  background-color: #005599;
+}
