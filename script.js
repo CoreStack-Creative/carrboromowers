@@ -1,30 +1,34 @@
 const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('side-menu');
 const overlay = document.getElementById('overlay');
+const menuClose = document.getElementById('menu-close');
+
+function toggleMenu(open) {
+  if (open) {
+    hamburger.classList.add('active');
+    sideMenu.classList.add('active');
+    overlay.style.display = 'block';
+  } else {
+    hamburger.classList.remove('active');
+    sideMenu.classList.remove('active');
+    overlay.style.display = 'none';
+  }
+}
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  sideMenu.classList.toggle('active');
-  overlay.style.display = sideMenu.classList.contains('active') ? 'block' : 'none';
+  toggleMenu(!sideMenu.classList.contains('active'));
 });
 
 overlay.addEventListener('click', () => {
-  hamburger.classList.remove('active');
-  sideMenu.classList.remove('active');
-  overlay.style.display = 'none';
+  toggleMenu(false);
+});
+
+menuClose.addEventListener('click', () => {
+  toggleMenu(false);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const quoteBox = document.getElementById("quote-box");
-  if (quoteBox) {
-    setTimeout(() => {
-      quoteBox.classList.add("show");
-    }, 300); // Slight delay for a smooth entrance
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Animate quote box (already added before)
+  // Animate quote box
   const quoteBox = document.getElementById("quote-box");
   if (quoteBox) {
     setTimeout(() => {
@@ -39,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (box) {
       setTimeout(() => {
         box.classList.add("show");
-      }, 700 + i * 400); // Delay each one
+      }, 700 + i * 400);
     }
   });
 });
