@@ -2,6 +2,20 @@ const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('side-menu');
 const overlay = document.getElementById('overlay');
 const menuClose = document.getElementById('menu-close');
+const hamburgerLines = document.querySelectorAll('#hamburger .line');
+
+function animateHamburger(open) {
+  if (open) {
+    hamburgerLines.forEach((line, index) => {
+      line.style.position = 'relative'; // Ensure relative for top
+      line.style.top = `${10 + index * 20}px`; // Slide down spacing
+    });
+  } else {
+    hamburgerLines.forEach(line => {
+      line.style.top = `0px`; // Reset
+    });
+  }
+}
 
 function toggleMenu(open) {
   if (open) {
@@ -13,6 +27,8 @@ function toggleMenu(open) {
     sideMenu.classList.remove('active');
     overlay.style.display = 'none';
   }
+
+  animateHamburger(open); // Trigger animation
 }
 
 hamburger.addEventListener('click', () => {
@@ -46,4 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 700 + i * 400);
     }
   });
-}); 
+});
