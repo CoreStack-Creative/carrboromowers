@@ -313,5 +313,45 @@
   margin-top: 1rem;
   opacity: 0.9;
  }
- 
- 
+
+ /* Call to Action Box */
+.quote-box {
+  position: relative;
+  max-width: 500px;
+  margin: -60px auto 2rem auto; /* Overlap hero */
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.quote-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-box h3 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.quote-button {
+  display: inline-block;
+  background-color: #003366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.quote-button:hover {
+  background-color: #005599;
+}

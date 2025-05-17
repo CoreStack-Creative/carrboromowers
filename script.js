@@ -13,3 +13,12 @@ overlay.addEventListener('click', () => {
   sideMenu.classList.remove('active');
   overlay.style.display = 'none';
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const quoteBox = document.getElementById("quote-box");
+  if (quoteBox) {
+    setTimeout(() => {
+      quoteBox.classList.add("show");
+    }, 300); // Slight delay for a smooth entrance
+  }
+});
