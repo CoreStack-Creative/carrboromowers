@@ -43,45 +43,88 @@
   font-size: 2rem;
 }
 
-/* Hamburger */
+/* Hamburger LEFT placement */
 .hamburger {
   position: absolute;
-  right: 2rem;
+  left: 2rem;
   top: 1.5rem;
   cursor: pointer;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
 }
 
 .hamburger .line {
   width: 30px;
   height: 4px;
   background-color: white;
-  margin: 6px 0;
-  transition: 0.4s ease;
-  opacity: 1;
+  transition: all 0.4s ease;
 }
 
-.hamburger.active .line {
+/* Line transition when active */
+.hamburger.active .line1 {
+  transform: translateY(40px);
   opacity: 0;
-  transform: translateY(10px);
+}
+.hamburger.active .line2 {
+  transform: translateY(60px);
+  opacity: 0;
+}
+.hamburger.active .line3 {
+  transform: translateY(80px);
+  opacity: 0;
 }
 
-/* Side Menu */
+/* Side Menu on the LEFT now */
 .side-menu {
   position: fixed;
-  right: -250px;
+  left: -250px;
   top: 0;
   width: 250px;
   height: 100%;
   background-color: #003366;
   padding: 3rem 1rem;
-  transition: right 0.3s ease;
+  transition: left 0.3s ease;
   z-index: 6;
+  opacity: 0;
 }
 
 .side-menu.active {
-  right: 0;
+  left: 0;
+  opacity: 1;
 }
+
+/* Menu items hidden initially */
+.side-menu ul {
+  list-style: none;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+.side-menu.active ul {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Bullets for menu items */
+.hamburger-dot {
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.side-menu.active .hamburger-dot {
+  opacity: 1;
+}
+
 
 .side-menu ul {
   list-style: none;
