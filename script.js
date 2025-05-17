@@ -22,3 +22,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300); // Slight delay for a smooth entrance
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Animate quote box (already added before)
+  const quoteBox = document.getElementById("quote-box");
+  if (quoteBox) {
+    setTimeout(() => {
+      quoteBox.classList.add("show");
+    }, 300);
+  }
+
+  // Animate feature boxes one-by-one
+  const features = [1, 2, 3];
+  features.forEach((num, i) => {
+    const box = document.getElementById(`feature-${num}`);
+    if (box) {
+      setTimeout(() => {
+        box.classList.add("show");
+      }, 700 + i * 400); // Delay each one
+    }
+  });
+});
